@@ -1,0 +1,38 @@
+package BasisOFSelenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class B_locators {
+
+	//Locators - path to find the element
+	  
+	 //Types of Locators - 1. Id, 2. className, 3, tagName, 4. LinkText, 
+	 //				       5. PartialLinktext, 6. Name, 7. Xpath, 8. CSS selector
+	
+	public static void main(String[] args) throws InterruptedException {
+		// We are setting up the chrome driver
+		WebDriverManager.chromedriver().setup();
+		// invoking the driver, creating the driver instance
+		WebDriver driver = new ChromeDriver();
+		// Launching the URL
+		driver.get("https://www.google.co.in/");
+		// Maximizing the window
+		driver.manage().window().maximize();
+		
+		//how to store an element in a variable
+		WebElement SearchBox = driver.findElement(By.id("APjFqb"));
+		
+		SearchBox.sendKeys("news");
+		
+		WebElement searchBtn= driver.findElement(By.name("btnK"));
+		Thread.sleep(3000);
+		searchBtn.click();
+		
+	}
+
+}
