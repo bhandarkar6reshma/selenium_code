@@ -1,0 +1,23 @@
+package BasisOFSelenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class A_InvocationOfDriver {
+	
+	public static void main(String[] args) {
+		
+		//we are setting up the chrome driver
+		WebDriverManager.chromedriver().setup();
+		// invoking the driver, creating the driver instance
+		WebDriver Driver= new ChromeDriver();
+		
+		// lanching the URL
+		Driver.get("https://www.google.co.in/");
+		// maximizing the window
+		Driver.manage().window().maximize();	
+		
+	}
+	
+}
